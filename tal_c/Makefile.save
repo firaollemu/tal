@@ -1,0 +1,18 @@
+CC = gcc
+CFLAGS = -Wall -Wextra -Iinclude
+
+SRC = src/main.c src/board.c src/move.c src/minimax.c src/evaluate.c
+OBJ = $(SRC:.c=.o)
+EXEC = TAL_c
+
+all: $(EXEC)
+
+$(EXEC): $(OBJ)
+	$(CC) $(CFLAGS) -o $@ $^
+		
+c
+
+clean:
+x	rm -f $(OBJ) $(EXEC)
+
+.PHONY: all clean
